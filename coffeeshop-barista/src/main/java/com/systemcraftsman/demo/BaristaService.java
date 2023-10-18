@@ -21,9 +21,6 @@ public class BaristaService {
     @Autowired
     private Barista barista;
 
-    @Autowired
-    private KafkaTemplate<String, Beverage> kafkaTemplate;
-
     @KafkaListener(topics = "orders", groupId = "baristas")
     public void process(Order order) {
         prepare(order);
