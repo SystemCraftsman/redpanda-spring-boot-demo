@@ -4,12 +4,9 @@ import com.systemcraftsman.demo.model.Barista;
 import com.systemcraftsman.demo.model.Beverage;
 import com.systemcraftsman.demo.model.BeverageState;
 import com.systemcraftsman.demo.model.Order;
-import io.smallrye.mutiny.Uni;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
@@ -26,6 +23,7 @@ public class BaristaService {
         prepare(order);
     }
 
+    // TODO: Annotate the method with @KafkaListener annotation for topic `orders`
     private void prepare(Order order) {
         int delay = getPreparationTime();
         try {
