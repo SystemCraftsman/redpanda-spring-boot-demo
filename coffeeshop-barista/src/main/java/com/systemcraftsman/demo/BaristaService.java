@@ -4,6 +4,7 @@ import com.systemcraftsman.demo.model.Barista;
 import com.systemcraftsman.demo.model.Beverage;
 import com.systemcraftsman.demo.model.BeverageState;
 import com.systemcraftsman.demo.model.Order;
+import io.smallrye.mutiny.Uni;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,6 @@ public class BaristaService {
     @Autowired
     private Barista barista;
 
-    @KafkaListener(topics = "orders", groupId = "baristas")
     public void process(Order order) {
         prepare(order);
     }
@@ -38,8 +38,12 @@ public class BaristaService {
 
     private Random random = new Random();
 
-    int getPreparationTime() {
+    public int getPreparationTime() {
         return random.nextInt(5) * 1000;
+    }
+
+    public Beverage createFallbackBeverage(Order order) {
+        return new Beverage(order,"", BeverageState.FAILED);
     }
 
 }
