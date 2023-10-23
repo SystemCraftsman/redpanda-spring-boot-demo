@@ -19,11 +19,11 @@ public class BaristaService {
     @Autowired
     private Barista barista;
 
+    // TODO: Annotate the method with  annotation for topic `orders`
     public void process(Order order) {
         prepare(order);
     }
 
-    // TODO: Annotate the method with @KafkaListener annotation for topic `orders`
     private void prepare(Order order) {
         int delay = getPreparationTime();
         try {
