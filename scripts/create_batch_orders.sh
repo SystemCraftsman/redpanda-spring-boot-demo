@@ -5,7 +5,7 @@ curl -X POST -H "Content-Type:application/json" \
       "http://localhost:8080/orders"
 
 curl -X POST -H "Content-Type:application/json" \
-      -d '{"product":"Americano", "name":"Morgan Freeman", "orderId":"2"}' \
+      -d '{"product":"Americano", "name":"Mazer Rackham", "orderId":"2"}' \
       "http://localhost:8080/orders"
 
 curl -X POST -H "Content-Type:application/json" \
@@ -29,7 +29,7 @@ curl -X POST -H "Content-Type:application/json" \
       "http://localhost:8080/orders"
 
 curl -X POST -H "Content-Type:application/json" \
-      -d '{"product":"Espresso", "name":"Morgan Freeman", "orderId":"8"}' \
+      -d '{"product":"Espresso", "name":"Mazer Rackham", "orderId":"8"}' \
       "http://localhost:8080/orders"
 
 curl -X POST -H "Content-Type:application/json" \
@@ -53,7 +53,7 @@ curl -X POST -H "Content-Type:application/json" \
       "http://localhost:8080/orders"
 
 curl -X POST -H "Content-Type:application/json" \
-      -d '{"product":"Americano", "name":"Morgan Freeman", "orderId":"14"}' \
+      -d '{"product":"Americano", "name":"Mazer Rackham", "orderId":"14"}' \
       "http://localhost:8080/orders"
 
 curl -X POST -H "Content-Type:application/json" \
@@ -77,7 +77,7 @@ curl -X POST -H "Content-Type:application/json" \
       "http://localhost:8080/orders"
 
 curl -X POST -H "Content-Type:application/json" \
-      -d '{"product":"Espresso", "name":"Morgan Freeman", "orderId":"20"}' \
+      -d '{"product":"Espresso", "name":"Mazer Rackham", "orderId":"20"}' \
       "http://localhost:8080/orders"
 
 curl -X POST -H "Content-Type:application/json" \
