@@ -14,8 +14,13 @@ public class CoffeeshopController {
 
     @PostMapping("/orders")
     public String sendOrder(@RequestBody Order order) {
-        coffeeshopService.sendOrder(order);
-        return "Order sent: " + order.toString();
+        try {
+            coffeeshopService.sendOrder(order);
+            return "\nOrder sent: " + order.toString();
+        }
+        catch(Exception e) {
+            return "\nException: " + e.getMessage();
+        }
     }
 
 }
