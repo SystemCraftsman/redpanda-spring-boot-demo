@@ -12,7 +12,7 @@ public class CoffeeshopService {
     private KafkaTemplate<String, Order> kafkaTemplate;
 
     public void sendOrder(Order order) {
-        kafkaTemplate.send("orders", order);
+        kafkaTemplate.send("orders", order.getOrderId(), order);
     }
 
 }
